@@ -14,7 +14,7 @@ namespace Web6.Data
     {
         public static void AddDatabase(this IServiceCollection services)
         {
-            services.AddDbContext<WebContext>(opt =>
+            services.AddDbContext<IDataContext, WebContext>(opt =>
             {
                 opt.UseSqlite("Data Source=d:\\MyDb.data");
             });

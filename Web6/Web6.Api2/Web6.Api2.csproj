@@ -27,6 +27,7 @@
     <ProjectReference Include="..\Web6.Data\Web6.Data.csproj" />
     <ProjectReference Include="..\Web6.Plugin\Web6.Plugin.csproj" />
     <ProjectReference Include="..\Web6.Send\Web6.Send.csproj" />
+    <ProjectReference Include="..\Web6.Service\Web6.Service.csproj" />
   </ItemGroup>
 
 </Project>

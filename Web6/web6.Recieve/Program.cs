@@ -1,19 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
-using System.Text.Json.Serialization;
 using web6.Recieve;
 using Web6.Common.Confs;
 using Web6.Common.Dtos;
 using Web6.Data;
-using Web6.Data.Entities;
 using Web6.Plugin;
 using Web6.Plugin.Abstracts;
-using Web6.Plugin.Concretes;
 
 internal class Program
 {

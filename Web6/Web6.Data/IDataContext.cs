@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Web6.Service.Abstarcts
+namespace Web6.Data
 {
-    public interface IBaseService
+    public interface IDataContext
     {
-
     }
 }

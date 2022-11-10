@@ -8,7 +8,7 @@ using Web6.Data.Entities;
 
 namespace Web6.Data
 {
-    public class WebContext : DbContext
+    public class WebContext : DbContext, IDataContext
     {
         public WebContext(DbContextOptions<WebContext> options):base(options)
         {

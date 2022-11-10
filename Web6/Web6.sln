@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfInterceptorTest", "EfInte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web6.Service", "Web6.Service\Web6.Service.csproj", "{6700E3D3-8D93-45F9-B304-A3649A7E20BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheProvider", "CacheProvider\CacheProvider.csproj", "{BEAC3152-B2F6-4944-80A7-119B4623A9F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheProvider", "CacheProvider\CacheProvider.csproj", "{BEAC3152-B2F6-4944-80A7-119B4623A9F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web6.Re2", "Web6.Re2\Web6.Re2.csproj", "{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BEAC3152-B2F6-4944-80A7-119B4623A9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEAC3152-B2F6-4944-80A7-119B4623A9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEAC3152-B2F6-4944-80A7-119B4623A9F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
