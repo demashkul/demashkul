@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rabbit.Consumer
+namespace Web.Consumer
 {
     public class DirectExchangeConsumer
     {
         public static void Consume(IModel channel, string route)
         {
             route = "saloon." + route;
-            string exchangeName = "direct";
+            string exchangeName = "directexchange";
             string qName = "queue" + route;
             channel.ExchangeDeclare(exchangeName, ExchangeType.Direct);
             channel.QueueDeclare(qName,

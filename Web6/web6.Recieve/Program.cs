@@ -29,6 +29,7 @@ internal class Program
 
 
         IServiceCollection services = new ServiceCollection();
+        services.Configure<RabbitConf>(config.GetRequiredSection("RabbitConf"));
         services.AddDatabase();
         services.AddHttpClients();
         var serviceProvider = services.BuildServiceProvider();
