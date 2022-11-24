@@ -6,7 +6,7 @@ using Web6.Common.Dtos;
 using Web6.Data.Entities;
 using Web6.Plugin.Abstracts;
 using Web6.Send;
-using Web6.Service.Abstarcts;
+using Web6.Service.Abstracts;
 
 namespace Web6.Api2.Controllers
 {
@@ -23,24 +23,25 @@ namespace Web6.Api2.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IOpenApi openApi;
         private readonly SaloonsConf saloonsConf;
-        private readonly IRepository<Student> repositoryStudent;
+        private readonly IStudentService studentService;
         public WeatherForecastController(ILogger<WeatherForecastController> logger,
             IMessageProducer messagePublisher,
             IOpenApi openApi,
-            IOptions<SaloonsConf> saloonsConf,
-            IRepository<Student> repositoryStudent)
+            IOptions<SaloonsConf> saloonsConf
+,
+            IStudentService studentService)
         {
             _logger = logger;
             _messagePublisher = messagePublisher;
             this.openApi = openApi;
             this.saloonsConf = saloonsConf.Value;
-            this.repositoryStudent = repositoryStudent;
+            this.studentService = studentService;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<IEnumerable<WeatherForecast>> GetAsync()
         {
-            var result =await repositoryStudent.GetAsync(p => p.Address == "");
+            var result =await studentService.GetAsync(p => p.Address == "");
             //var message = new MessageDto
             //{
             //    Title = "Baþlýk",

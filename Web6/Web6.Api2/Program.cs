@@ -1,13 +1,12 @@
 
 using CacheProvider;
-using Microsoft.Extensions.DependencyInjection;
+using Web.Service.Concretes;
 using Web6.Common.Confs;
 using Web6.Data;
-using Web6.Data.Entities;
+using Web6.Jwt;
 using Web6.Plugin;
 using Web6.Send;
-using Web6.Service.Abstarcts;
-using Web6.Service.Concretes;
+using Web6.Service.Abstracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +18,7 @@ builder.Services.AddHttpClients();
 builder.Services.AddRedis();
 builder.Services.AddScoped<IMessageProducer, MessageProducer>();
 
-builder.Services.AddScoped<IRepository<Student>, Repository<Student>>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -41,6 +40,11 @@ builder.Services.AddCors(options =>
 builder.Services.Configure<RabbitConf>(builder.Configuration.GetRequiredSection("RabbitConf"));
 
 builder.Services.Configure<SaloonsConf>(builder.Configuration.GetRequiredSection("SaloonsConf"));
+
+//builder.Services.AddScoped<IUserClaims, UserClaims>();
+////jwt
+builder.Services.Configure<JwtTokenConfiguration>(builder.Configuration.GetRequiredSection("Jwt"));
+//builder.Services.AddJwtService();
 
 var app = builder.Build();
 
