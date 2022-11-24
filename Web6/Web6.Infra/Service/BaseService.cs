@@ -5,18 +5,18 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Web6.Data;
-using Web6.Service.Abstarcts;
+using Web6.Infra.DataAccess;
+using Web6.Infra.Entity;
 
-namespace Web6.Service.Concretes
+namespace Web6.Infra.Service
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class BaseService<TEntity>: IBaseService<TEntity> where TEntity : BaseEntity
     {
         private readonly IDataContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
 
 
-        public Repository(IDataContext dbContext)
+        public BaseService(IDataContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = (_dbContext as DbContext).Set<TEntity>();

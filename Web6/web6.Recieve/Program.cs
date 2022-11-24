@@ -50,6 +50,8 @@ internal class Program
         var connection = factory.CreateConnection();
         var channel = connection.CreateModel();
 
+        DirectExchangeConsumer.Consume(channel, args[0]);
+
         QueBuild(channel, "q1", serviceProvider);
         QueBuild(channel, "q2", serviceProvider);
         //Console.WriteLine(" Press [enter] to exit.");

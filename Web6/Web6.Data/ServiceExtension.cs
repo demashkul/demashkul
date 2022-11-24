@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Web6.Infra.DataAccess;
 
 namespace Web6.Data
 {
@@ -18,6 +13,12 @@ namespace Web6.Data
             {
                 opt.UseSqlite("Data Source=d:\\MyDb.data");
             });
+
+            //NpgSql
+            //services.AddDbContext<IDataContext, WebContext>(opt =>
+            //{
+            //    opt.UseNpgsql("Host=xx;Database=xx;Username=xx;Password=xx;Persist Security Info=true;");
+            //});
         }
     }
 }

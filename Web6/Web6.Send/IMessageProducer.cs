@@ -9,6 +9,6 @@ namespace Web6.Send
 {
     public interface IMessageProducer
     {
-        void SendMessage(MessageDto message);
+        void PublishToQue(MessageDto message);
     }
 }

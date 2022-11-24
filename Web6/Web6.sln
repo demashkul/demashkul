@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web6.Service", "Web6.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheProvider", "CacheProvider\CacheProvider.csproj", "{BEAC3152-B2F6-4944-80A7-119B4623A9F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web6.Re2", "Web6.Re2\Web6.Re2.csproj", "{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web6.Re2", "Web6.Re2\Web6.Re2.csproj", "{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web6.Infra", "Web6.Infra\Web6.Infra.csproj", "{3D09C314-95CA-468B-B854-67864B655180}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A22AF4EF-0DEE-412D-B884-C0061DE28B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D09C314-95CA-468B-B854-67864B655180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D09C314-95CA-468B-B854-67864B655180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D09C314-95CA-468B-B854-67864B655180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D09C314-95CA-468B-B854-67864B655180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

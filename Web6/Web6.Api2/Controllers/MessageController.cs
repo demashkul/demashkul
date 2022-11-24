@@ -35,7 +35,7 @@ namespace Web6.Api2.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] MessageDto dto)
         {
-            _messagePublisher.SendMessage(dto);
+            _messagePublisher.PublishToQue(dto);
             return Ok();
         }
 

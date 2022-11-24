@@ -1,16 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using Web6.Infra.Entity;
 
-namespace Web6.Service.Abstarcts
+namespace Web6.Infra.Service
 {
-    public interface IRepository<TEntity>  where TEntity : class
+    public interface IBaseService<TEntity> where TEntity : BaseEntity
     {
         #region GetAll
         Task<List<TEntity>> GetAllAsync();
@@ -39,6 +37,5 @@ namespace Web6.Service.Abstarcts
         void DeleteMany(IEnumerable<TEntity> entities);
         #endregion
         Task<bool> HasAnyAsync(Expression<Func<TEntity, bool>> predicate);
-
     }
 }
