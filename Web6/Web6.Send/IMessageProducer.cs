@@ -10,5 +10,6 @@ namespace Web6.Send
     public interface IMessageProducer
     {
         void PublishToQue(MessageDto message);
+        void PublishToExchange();
     }
 }

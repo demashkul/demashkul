@@ -1,5 +1,7 @@
 
+using AspNetCoreRateLimit;
 using CacheProvider;
+using System.Configuration;
 using Web.Service.Concretes;
 using Web6.Common.Confs;
 using Web6.Data;
@@ -13,12 +15,26 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Configuration.GetConnectionString("");
 builder.Services.AddControllers();
-builder.Services.AddDatabase();
+builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddHttpClients();
 builder.Services.AddRedis();
 builder.Services.AddScoped<IMessageProducer, MessageProducer>();
 
 builder.Services.AddScoped<IStudentService, StudentService>();
+
+
+// needed to store rate limit counters and ip rules
+builder.Services.AddMemoryCache();
+
+//load general configuration from appsettings.json
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+
+//load ip rules from appsettings.json
+builder.Services.Configure<IpRateLimitPolicies>(builder.Configuration.GetSection("IpRateLimitPolicies"));
+
+// inject counter and rules stores
+builder.Services.AddInMemoryRateLimiting();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -47,6 +63,8 @@ builder.Services.Configure<JwtTokenConfiguration>(builder.Configuration.GetRequi
 //builder.Services.AddJwtService();
 
 var app = builder.Build();
+
+app.UseIpRateLimiting();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

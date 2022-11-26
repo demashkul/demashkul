@@ -5,9 +5,9 @@ export default {
     return {
       value: '',
       ops: [
-        { name: 'Operator 1', code: 'op1' },
-        { name: 'Operator 2', code: 'op2' },
-        { name: 'Operator 3', code: 'op3' },
+        { name: 'The 1 Volar', code: 'op1' },
+        { name: 'The 2 Visual Studio Keymap', code: 'op2' },
+        { name: 'The 3 Rainbow Brackets', code: 'op3' },
       ],
       dto:{
         title:'test',
@@ -32,7 +32,7 @@ export default {
       <InputText type="text" v-model="dto.content" />
     </div>
     <div class="col-12">
-      <Dropdown v-model="dto.via" :options="ops" optionLabel="name" optionValue="code" placeholder="Operatör Seçiniz" />
+      <Dropdown v-model="dto.via" :options="ops" optionLabel="name" optionValue="code" placeholder="Choose" />
     </div>
     <div class="col-12">
       <Button @click="save" value="Kaydet" />

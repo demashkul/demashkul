@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client;
+﻿using Microsoft.Extensions.DependencyInjection;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace web6.Recieve
                 var body = e.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
                 //var dto = System.Text.Json.JsonSerializer.Deserialize<MessageDto>(Encoding.UTF8.GetString(body));
-
+                
                 Console.WriteLine(message);
             };
 
